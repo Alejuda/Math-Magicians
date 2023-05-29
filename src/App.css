@@ -2,4 +2,39 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+.grid-container {
+  box-shadow: 5px 5px 10px rgb(167, 167, 167);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  max-width: 600px;
+}
+
+.calc-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 30px;
+  grid-column: span 1;
+  border: 1px solid rgb(184, 184, 184);
+  background-color: rgb(233, 233, 233);
+}
+
+.calc-op {
+  background-color: orange;
+}
+
+.calc-screen {
+  background-color: grey;
+  justify-content: flex-end;
+  color: white;
+  grid-column: span 4;
+}
+
+.calc-0 {
+  grid-column: span 2;
 }
