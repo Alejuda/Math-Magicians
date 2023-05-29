@@ -1,3 +1,5 @@
+import CalcNumber from './CalcNumber';
+
 function Calculator() {
   return (
     <div className="grid-container">
@@ -6,17 +8,17 @@ function Calculator() {
       <div className="calc-number calc-toggle-positive">+/-</div>
       <div className="calc-number calc-percent">%</div>
       <div className="calc-number calc-op calc-div">÷</div>
-      <div className="calc-number calc-7">7</div>
-      <div className="calc-number calc-8">8</div>
-      <div className="calc-number calc-9">9</div>
+      <CalcNumber number={7} />
+      <CalcNumber number={8} />
+      <CalcNumber number={9} />
       <div className="calc-number calc-op calc-multi">x</div>
-      <div className="calc-number calc-4">4</div>
-      <div className="calc-number calc-5">5</div>
-      <div className="calc-number calc-6">6</div>
+      <CalcNumber number={4} />
+      <CalcNumber number={5} />
+      <CalcNumber number={6} />
       <div className="calc-number calc-op calc-rest">-</div>
-      <div className="calc-number calc-1">1</div>
-      <div className="calc-number calc-2">2</div>
-      <div className="calc-number calc-3">3</div>
+      <CalcNumber number={1} />
+      <CalcNumber number={2} />
+      <CalcNumber number={3} />
       <div className="calc-number calc-op calc-sum">+</div>
       <div className="calc-number calc-0">0</div>
       <div className="calc-number calc-coma">.</div>
