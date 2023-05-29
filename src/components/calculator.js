@@ -1,6 +1,6 @@
 import CalcNumber from './CalcNumber';
 
-function Calculator() {
+const Calculator = () => {
   return (
     <div className="grid-container">
       <div className="calc-number calc-screen">0</div>
