@@ -1,11 +1,20 @@
 import PropTypes from 'prop-types';
 
-const CalcNumber = ({ number }) => (
-  <div className={`calc-number calc-${number}`}>{number}</div>
-);
+const CalcNumber = ({ number, handleClick }) => {
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleClick(number);
+    }
+  };
+
+  return (
+    <div role="button" className={`calc-number calc-${number}`} onClick={() => { handleClick(`${number}`); }} onKeyDown={handleKeyDown} tabIndex={0}>{number}</div>
+  );
+};
 
 export default CalcNumber;
 
 CalcNumber.propTypes = {
   number: PropTypes.number.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };

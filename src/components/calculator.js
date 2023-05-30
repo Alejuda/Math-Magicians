@@ -1,28 +1,45 @@
+import { useState } from 'react';
 import CalcNumber from './CalcNumber';
+import CalcOperator from './CalcOperator';
+import Screen from './screen';
+import calculate from '../logic/calculate';
 
-const Calculator = () => (
-  <div className="grid-container">
-    <div className="calc-number calc-screen">0</div>
-    <div className="calc-number calc-res">AC</div>
-    <div className="calc-number calc-toggle-positive">+/-</div>
-    <div className="calc-number calc-percent">%</div>
-    <div className="calc-number calc-op calc-div">÷</div>
-    <CalcNumber number={7} />
-    <CalcNumber number={8} />
-    <CalcNumber number={9} />
-    <div className="calc-number calc-op calc-multi">x</div>
-    <CalcNumber number={4} />
-    <CalcNumber number={5} />
-    <CalcNumber number={6} />
-    <div className="calc-number calc-op calc-rest">-</div>
-    <CalcNumber number={1} />
-    <CalcNumber number={2} />
-    <CalcNumber number={3} />
-    <div className="calc-number calc-op calc-sum">+</div>
-    <div className="calc-number calc-0">0</div>
-    <div className="calc-number calc-coma">.</div>
-    <div className="calc-number calc-op calc-iqual">=</div>
-  </div>
-);
+const Calculator = () => {
+  const [calcObject, setCalcObject] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
+
+  function handleClick(buttonName) {
+    const updatedObj = calculate(calcObject, buttonName);
+    setCalcObject(updatedObj);
+  }
+
+  return (
+    <div className="grid-container">
+      <Screen render={calcObject.next || calcObject.total || '0'} />
+      <CalcOperator operator="AC" handleClick={handleClick} />
+      <CalcOperator operator="+/-" handleClick={handleClick} />
+      <CalcOperator operator="%" handleClick={handleClick} />
+      <CalcOperator operator="÷" handleClick={handleClick} />
+      <CalcNumber number={7} handleClick={handleClick} />
+      <CalcNumber number={8} handleClick={handleClick} />
+      <CalcNumber number={9} handleClick={handleClick} />
+      <CalcOperator operator="x" handleClick={handleClick} />
+      <CalcNumber number={4} handleClick={handleClick} />
+      <CalcNumber number={5} handleClick={handleClick} />
+      <CalcNumber number={6} handleClick={handleClick} />
+      <CalcOperator operator="-" handleClick={handleClick} />
+      <CalcNumber number={1} handleClick={handleClick} />
+      <CalcNumber number={2} handleClick={handleClick} />
+      <CalcNumber number={3} handleClick={handleClick} />
+      <CalcOperator operator="+" handleClick={handleClick} />
+      <CalcNumber number={0} handleClick={handleClick} />
+      <CalcOperator className="calc-number calc-0" operator="." handleClick={handleClick} />
+      <CalcOperator operator="=" handleClick={handleClick} />
+    </div>
+  );
+};
 
 export default Calculator;
