@@ -76,7 +76,6 @@ body {
 .home-container {
   flex-direction: column;
   gap: 30px;
-  
   margin-bottom: auto;
 }
 
