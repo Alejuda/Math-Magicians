@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Renders the header 1`] = `
+<div>
+  <header
+    class="header"
+  >
+    <h1>
+      MathMagicians
+    </h1>
+    <ul
+      class="nav"
+    >
+      <li
+        class="listitem"
+      >
+        <a
+          activeclassname="[object Object]"
+          aria-current="page"
+          class="link active"
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        class="listitem"
+      >
+        <a
+          activeclassname="active"
+          class="link"
+          href="/calculator"
+        >
+          Calculator
+        </a>
+      </li>
+      <li
+        class="listitem"
+      >
+        <a
+          activeclassname="active"
+          class="link"
+          href="/quote"
+        >
+          Quote
+        </a>
+      </li>
+    </ul>
+  </header>
+</div>
+`;
