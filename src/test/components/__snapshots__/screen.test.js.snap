@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Screen component Renders correctly 1`] = `
+<div
+  className="calc-number calc-screen"
+  data-testId="screen-element"
+>
+   
+   
+</div>
+`;
