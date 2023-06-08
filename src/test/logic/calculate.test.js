@@ -1,29 +1,27 @@
-import { toBeRequired } from '@testing-library/jest-dom/matchers';
 import calculate from '../../logic/calculate';
 
 describe('Calculate', () => {
-
   let calculatorObject;
   beforeEach(() => {
     calculatorObject = {
       total: null,
       next: null,
       operation: null,
-    }
-  })
+    };
+  });
 
   it('should return the calculator object reseted when pressing AC', () => {
     calculatorObject = {
       total: 300,
       next: null,
       operation: null,
-    }
+    };
 
     expect(calculate(calculatorObject, 'AC')).toEqual({
       total: null,
       next: null,
       operation: null,
-    })
+    });
   });
 
   it('should concatenate the number to next property when buttonName is a number', () => {
@@ -32,7 +30,7 @@ describe('Calculate', () => {
       next: '5',
       operation: null,
     };
-    
+
     expect(calculate(calculatorObject, '5')).toEqual({
       total: null,
       next: '55',
@@ -45,7 +43,7 @@ describe('Calculate', () => {
       next: '5',
       operation: '+',
     };
-    
+
     expect(calculate(calculatorObject, '5')).toEqual({
       total: '10',
       operation: '+',
@@ -59,7 +57,7 @@ describe('Calculate', () => {
       next: '55',
       operation: null,
     };
-  
+
     expect(calculate(calculatorObject, '-')).toEqual({
       total: '55',
       operation: '-',
@@ -73,7 +71,7 @@ describe('Calculate', () => {
       next: null,
       operation: null,
     };
-  
+
     expect(calculate(calculatorObject, '.')).toEqual({
       total: null,
       next: '0.',
@@ -87,7 +85,7 @@ describe('Calculate', () => {
       next: '53',
       operation: null,
     };
-  
+
     expect(calculate(calculatorObject, '.')).toEqual({
       total: null,
       next: '53.',
@@ -108,4 +106,4 @@ describe('Calculate', () => {
       operation: null,
     });
   });
-})
+});

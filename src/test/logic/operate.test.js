@@ -1,4 +1,4 @@
-import operate from "../../logic/operate";
+import operate from '../../logic/operate';
 
 describe('operate', () => {
   let obj;
@@ -7,7 +7,7 @@ describe('operate', () => {
       total: '5',
       next: '10',
       operation: '+',
-    }
+    };
     expect(operate(obj.total, obj.next, obj.operation)).toEqual('15');
   });
 
@@ -16,7 +16,7 @@ describe('operate', () => {
       total: '5',
       next: '10',
       operation: '-',
-    }
+    };
     expect(operate(obj.total, obj.next, obj.operation)).toEqual('-5');
   });
 
@@ -25,7 +25,7 @@ describe('operate', () => {
       total: '5',
       next: '10',
       operation: 'x',
-    }
+    };
     expect(operate(obj.total, obj.next, obj.operation)).toEqual('50');
   });
 
@@ -34,7 +34,7 @@ describe('operate', () => {
       total: '5',
       next: '10',
       operation: '÷',
-    }
+    };
     expect(operate(obj.total, obj.next, obj.operation)).toEqual('0.5');
   });
 
@@ -43,7 +43,7 @@ describe('operate', () => {
       total: '10',
       next: '3',
       operation: '%',
-    }
+    };
     expect(operate(obj.total, obj.next, obj.operation)).toEqual('1');
   });
-})
+});

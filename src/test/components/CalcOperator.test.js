@@ -18,11 +18,11 @@ describe('The CalcOperator component', () => {
 
   test('Calls the eventHandler when clicked', () => {
     const handleClick = jest.fn();
-    render(<CalcOperator operator="%"  handleClick={handleClick} />);
+    render(<CalcOperator operator="%" handleClick={handleClick} />);
     const operatorBtn = screen.getByRole('button', {
       name: '%',
     });
     userEvent.click(operatorBtn);
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
-})
+});

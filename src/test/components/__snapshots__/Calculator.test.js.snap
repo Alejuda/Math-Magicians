@@ -7,6 +7,7 @@ exports[`Calculator Renders calculator correctly 1`] = `
   >
     <div
       class="calc-number calc-screen"
+      data-testid="screen-element"
     >
        
       0

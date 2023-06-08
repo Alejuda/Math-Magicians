@@ -3,17 +3,16 @@ import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import Footer from '../../components/Footer';
 
-
 describe('The Footer', () => {
   it('Matches the snapShot', () => {
     const tree = renderer.create(<Footer />).toJSON();
     expect(tree).toMatchSnapshot();
-  }); 
+  });
 
   it('Renders content correctly', () => {
-    render(<Footer />)
+    render(<Footer />);
     expect(screen.getByRole('heading', {
-      name: "© 2023 Ignacio Fino. All rights reserved.",
+      name: '© 2023 Ignacio Fino. All rights reserved.',
     })).toBeInTheDocument();
   });
-})
+});
