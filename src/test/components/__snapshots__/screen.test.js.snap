@@ -3,9 +3,10 @@
 exports[`The Screen component Renders correctly 1`] = `
 <div
   className="calc-number calc-screen"
-  data-testId="screen-element"
+  data-testid="screen-element"
 >
    
+  0
    
 </div>
 `;

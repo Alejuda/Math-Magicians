@@ -6,18 +6,19 @@ import '@testing-library/jest-dom';
 import CalcOperator from '../../components/CalcOperator';
 
 describe('The CalcOperator component', () => {
+    const handleClick = jest.fn();
+
   it('Renders orrectly', () => {
-    render(<CalcOperator />);
+    render(<CalcOperator operator="+/-" handleClick={handleClick} />);
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
   it('Matches the snapShot', () => {
-    const tree = renderer.create(<CalcOperator operator="AC" />).toJSON();
+    const tree = renderer.create(<CalcOperator operator="AC" handleClick={handleClick} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   test('Calls the eventHandler when clicked', () => {
-    const handleClick = jest.fn();
     render(<CalcOperator operator="%" handleClick={handleClick} />);
     const operatorBtn = screen.getByRole('button', {
       name: '%',
