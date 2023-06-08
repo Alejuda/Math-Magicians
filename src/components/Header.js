@@ -1,10 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from '../styles/Header.module.css';
 
-const active = {
-  color: 'orange',
-};
-
 const Header = () => (
   <header className={styles.header}>
     <h1>MathMagicians</h1>

@@ -6,7 +6,7 @@ import '@testing-library/jest-dom';
 import CalcOperator from '../../components/CalcOperator';
 
 describe('The CalcOperator component', () => {
-    const handleClick = jest.fn();
+  const handleClick = jest.fn();
 
   it('Renders orrectly', () => {
     render(<CalcOperator operator="+/-" handleClick={handleClick} />);
